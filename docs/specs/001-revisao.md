@@ -1,45 +1,31 @@
 # Revisão Cruzada — SPEC 001 (Cadastro de Agendamento)
 
-## Identificação da equipe revisora
+## Identificação da revisão
 
-**Equipe revisora:** PENDENTE
-
-**Integrantes da equipe revisora:** PENDENTE
-
-**Data da revisão:** PENDENTE
+**Projeto:** Agenda Fácil: Sistema de Controle de Agendamentos para Profissionais Autônomos  
+**Feature revisada:** Cadastro de Agendamento  
+**Equipe revisora:** Grupo da Maria Eduarda Goetz  
+**Data da revisão:** 01/10/2026
 
 ## Respostas da revisão cruzada
 
-Responder as três perguntas abaixo a partir da leitura da SPEC 001. Se não houver perguntas formais da oficina no repositório, preencher conforme a leitura livre da spec.
+### 1. Consegui entender o que deve ser construído sem perguntar nada a vocês?
 
-### Resposta 1 — Compreensão do objetivo e escopo
+**Resposta da equipe revisora:**  
+Sim, consegui.
 
-**Pergunta (da oficina, se aplicável):** PENDENTE
+### 2. Achei alguma frase que admite duas leituras diferentes?
 
-**Resposta da equipe revisora:** PENDENTE
+**Resposta da equipe revisora:**  
+Não há frases com duplo sentido, está tudo muito bem claro e definido.
 
-### Resposta 2 — Clareza e verificabilidade das regras e critérios de aceite
+### 3. Consigo dizer, lendo só os critérios de aceite, se a feature está pronta?
 
-**Pergunta (da oficina, se aplicável):** PENDENTE
+**Resposta da equipe revisora:**  
+Sim.
 
-**Resposta da equipe revisora:** PENDENTE
+## Resultado da revisão cruzada
 
-### Resposta 3 — Suficiência da spec para reconstruir a feature
+A equipe revisora conseguiu compreender o que deve ser construído sem solicitar esclarecimentos adicionais. Também não identificou frases com duas interpretações diferentes e considerou que os critérios de aceite permitem verificar se a feature está pronta.
 
-**Pergunta (da oficina, se aplicável):** PENDENTE
-
-**Resposta da equipe revisora:** PENDENTE
-
-## Ambiguidade real identificada
-
-Campo preenchido pela equipe revisora após ler a SPEC 001. Registrar aqui qualquer ponto que, de fato, gerou dúvida inequívoca (não são opiniões subjetivas sobre "melhor forma de fazer").
-
-**Descrição da ambiguidade real identificada pela equipe revisora:** PENDENTE
-
-## Decisão tomada depois da revisão
-
-Campo preenchido pela equipe autora da SPEC 001 após receber a revisão.
-
-**Decisão sobre a ambiguidade apontada:** PENDENTE
-
-**Motivo da decisão:** PENDENTE
+Nenhuma nova ambiguidade foi identificada durante a revisão cruzada.

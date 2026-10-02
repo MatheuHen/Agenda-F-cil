@@ -120,6 +120,12 @@ As ambiguidades identificadas e suas decisões são registradas abaixo:
 
 **Motivo:** O problema validado descreve que o profissional autônomo utiliza o WhatsApp para combinar horários com clientes e precisa organizar seus próprios agendamentos. A proposta de valor é oferecer ao profissional uma ferramenta para centralizar sua rotina. Portanto, o Profissional Autônomo é o ator que executa o cadastro nesta primeira feature.
 
+### DEC-04 — Revisão cruzada
+
+**Resultado da revisão cruzada de 01/10/2026:** A SPEC 001 foi revisada pelo Grupo da Maria Eduarda Goetz. A equipe revisora informou que conseguiu compreender o que deve ser construído sem solicitar esclarecimentos adicionais, não identificou frases com duas interpretações diferentes e considerou os critérios de aceite suficientes para verificar se a feature está pronta.
+
+Nenhuma nova ambiguidade foi apontada durante a revisão cruzada, portanto não foi necessária alteração adicional de comportamento na SPEC a partir dessa revisão.
+
 ---
 
 ### Pergunta de suficiência
