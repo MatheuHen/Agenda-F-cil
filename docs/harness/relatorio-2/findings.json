@@ -1,0 +1,472 @@
+{
+  "summary": {
+    "evidenceMode": "session-rich",
+    "evidenceBoundary": {
+      "manifest": {
+        "schemaVersion": 2,
+        "sourceFingerprint": "0138e596a2960386",
+        "adapterVersion": "claude-task-loop-source-v2",
+        "platform": "claude",
+        "selection": {
+          "strategy": "all-eligible",
+          "eligibleCount": 1,
+          "analyzedCount": 1,
+          "confidence": "High"
+        }
+      },
+      "episodeCoverage": {
+        "episodeCount": 17,
+        "editedEpisodeCount": 9,
+        "closedEpisodeCount": 0,
+        "recoveredEpisodeCount": 0
+      },
+      "deliveryEvidenceLevels": [],
+      "sourceGaps": []
+    },
+    "semanticFacets": {
+      "schemaVersion": 1,
+      "status": "supplementary",
+      "entries": [
+        {
+          "id": "session-insight:source-coverage",
+          "kind": "redacted-summary",
+          "episodeRef": null,
+          "status": "candidate",
+          "labels": [
+            "source-coverage",
+            "High"
+          ],
+          "summary": "Analyzed 1 of 1 sessions; 1/3 enabled source roots exist. Use this as the current workspace evidence boundary for final insight cards.",
+          "evidenceRefs": [],
+          "modelVersion": "session-insights-v1"
+        },
+        {
+          "id": "session-insight:validation-behavior",
+          "kind": "redacted-summary",
+          "episodeRef": null,
+          "status": "candidate",
+          "labels": [
+            "validation-behavior",
+            "High"
+          ],
+          "summary": "Observed validation command category: lint (8). Use observed validation as execution evidence, not just configured command availability.",
+          "evidenceRefs": [
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-2-1",
+              "type": "tool.call",
+              "line": 113
+            },
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-2-2",
+              "type": "tool.call",
+              "line": 122
+            },
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-2-3",
+              "type": "tool.call",
+              "line": 127
+            }
+          ],
+          "modelVersion": "session-insights-v1"
+        },
+        {
+          "id": "session-insight:post-edit-validation",
+          "kind": "rework-correction",
+          "episodeRef": null,
+          "status": "candidate",
+          "labels": [
+            "post-edit-validation",
+            "High"
+          ],
+          "summary": "Observed 9 edit event(s) and later validation: agent-lint (1). Use this as evidence for validation-after-edit behavior, with the sample boundary still visible.",
+          "evidenceRefs": [
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-3-1",
+              "type": "tool.call",
+              "line": 380
+            }
+          ],
+          "modelVersion": "session-insights-v1"
+        },
+        {
+          "id": "session-insight:execution-friction",
+          "kind": "friction-taxonomy",
+          "episodeRef": null,
+          "status": "candidate",
+          "labels": [
+            "execution-friction",
+            "High"
+          ],
+          "summary": "Observed friction category: failed-event (2). Open bounded sessions behind this category before turning it into a user-facing recommendation.",
+          "evidenceRefs": [
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-4-1",
+              "type": "tool.result",
+              "line": 101
+            },
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-4-2",
+              "type": "tool.result",
+              "line": 318
+            }
+          ],
+          "modelVersion": "session-insights-v1"
+        },
+        {
+          "id": "session-insight:tool-mix",
+          "kind": "redacted-summary",
+          "episodeRef": null,
+          "status": "candidate",
+          "labels": [
+            "tool-mix",
+            "High"
+          ],
+          "summary": "Most observed tool: Bash (41). Use this as workflow evidence, then inspect bounded sessions before claiming user intent.",
+          "evidenceRefs": [
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-5-1",
+              "type": "tool.call",
+              "line": 41
+            },
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-5-2",
+              "type": "tool.call",
+              "line": 50
+            },
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-5-3",
+              "type": "tool.call",
+              "line": 53
+            },
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-5-4",
+              "type": "tool.call",
+              "line": 56
+            },
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-5-5",
+              "type": "tool.call",
+              "line": 60
+            }
+          ],
+          "modelVersion": "session-insights-v1"
+        },
+        {
+          "id": "session-insight:session-usage-efficiency",
+          "kind": "redacted-summary",
+          "episodeRef": null,
+          "status": "candidate",
+          "labels": [
+            "session-usage-efficiency",
+            "High"
+          ],
+          "summary": "The analysis covered 1 sessions: none met the active-long threshold. This activity does not establish model preference or quality; effectiveness still requires outcome comparison within the same task family.",
+          "evidenceRefs": [
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-6-1",
+              "type": "metadata.file-history-snapshot",
+              "line": 18
+            },
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-6-2",
+              "type": "model.response.completed",
+              "line": 40
+            },
+            {
+              "kind": "claude-project-jsonl",
+              "id": "session-insight-6-3",
+              "type": "model.response.completed",
+              "line": 50
+            }
+          ],
+          "modelVersion": "session-insights-v1"
+        }
+      ]
+    },
+    "learningCapture": {
+      "schemaVersion": 1,
+      "state": "N/A",
+      "summary": "N/A — requires two comparable observation windows and an intervention comparison.",
+      "interventions": []
+    },
+    "usageActivity": {
+      "schemaVersion": 5,
+      "dateBasis": "UTC",
+      "measurementBasis": "session-starts-active-estimate-model-active-session-days-skill-invocations-loads-mcp-tool-calls-and-observed-token-usage",
+      "truncated": false,
+      "dates": [
+        "2026-10-03"
+      ],
+      "sessions": {
+        "total": 1,
+        "starts": [
+          1
+        ],
+        "activeMinutes": [
+          19.5
+        ]
+      },
+      "models": [
+        {
+          "name": "claude-opus-5-5",
+          "total": 1,
+          "daily": [
+            1
+          ],
+          "totalFailed": 0,
+          "dailyFailed": [
+            0
+          ]
+        }
+      ],
+      "skills": [],
+      "mcps": [],
+      "tokens": {
+        "observedResponseCount": 50,
+        "totals": {
+          "inputTokens": 100,
+          "outputTokens": 42609,
+          "cacheReadInputTokens": 7657015,
+          "cacheCreationInputTokens": 220859
+        },
+        "daily": {
+          "inputTokens": [
+            100
+          ],
+          "outputTokens": [
+            42609
+          ],
+          "cacheReadInputTokens": [
+            7657015
+          ],
+          "cacheCreationInputTokens": [
+            220859
+          ]
+        }
+      }
+    },
+    "usageEfficiency": {
+      "schemaVersion": 2,
+      "selection": {
+        "strategy": "all-eligible",
+        "eligibleSessionCount": 1,
+        "analyzedSessionCount": 1,
+        "complete": true
+      },
+      "roles": {
+        "userThreadCandidateCount": 1,
+        "childAgentCandidateCount": 0
+      },
+      "longSessions": {
+        "activeCount": 0,
+        "wallOnlyCount": 0,
+        "longestActiveMinutes": 0,
+        "activeRatio": 0,
+        "estimate": {
+          "method": "capped-event-gap",
+          "activeThresholdMinutes": 45,
+          "gapCapMinutes": 5,
+          "idleGapMinutes": 30
+        },
+        "samples": []
+      },
+      "accounting": {
+        "mode": "host-estimated",
+        "responseCount": 50,
+        "modelAttributedResponseCount": 50,
+        "unattributedResponseCount": 0,
+        "usageFieldObservedCount": 50,
+        "nonZeroUsageCount": 50,
+        "exactCreditsAvailable": false,
+        "pricingVersion": null
+      },
+      "modelUsage": [
+        {
+          "model": "claude-opus-5-5",
+          "responseCount": 50,
+          "usageFieldObservedCount": 50,
+          "nonZeroUsageCount": 50
+        }
+      ],
+      "outcomeReview": {
+        "status": "required",
+        "reviewedCandidateCount": 0,
+        "reviewedActiveLongCount": 0,
+        "comparableModelOutcomeEvidence": false,
+        "recommendation": "controlled-a-b-required"
+      },
+      "tokenTotals": {
+        "inputTokens": 100,
+        "outputTokens": 42609,
+        "cacheReadInputTokens": 7657015,
+        "cacheCreationInputTokens": 220859
+      }
+    },
+    "projectName": "agenda-facil",
+    "locale": "en",
+    "modelId": "agent-work-loop-v4",
+    "reportContractVersion": 25,
+    "overview": "Segunda medição (commit f384083): permissões e hook foram exercitados na sessão; o CI e a skill existem, mas ainda não foram usados, e a janela continua com uma única sessão.",
+    "dimensions": [
+      {
+        "id": "task-understanding",
+        "label": "Task Understanding",
+        "score": 74,
+        "summary": "O CLAUDE.md agora importa o AGENTS.md, então o Claude Code carrega os comandos, a rota para as specs e os princípios em toda sessão. Ainda não há episódio de mudança de produto que comprove o uso da spec.",
+        "findingRefs": []
+      },
+      {
+        "id": "controlled-execution",
+        "label": "Controlled Execution",
+        "score": 72,
+        "summary": "A política allow/ask/deny existe e foi exercitada: a leitura do .env foi recusada na sessão. A skill da equipe existe, mas nunca foi acionada, o que segura a operação suportada em 'presente'.",
+        "findingRefs": [
+          "skill-nunca-acionada"
+        ]
+      },
+      {
+        "id": "change-validation",
+        "label": "Change Validation",
+        "score": 74,
+        "summary": "O hook PostToolUse rodou o lint depois de cada edição; uma falha provocada foi acusada, corrigida e revalidada. O analisador não registra execuções de hook como validação, então a evidência é da sessão, não do coletor.",
+        "findingRefs": []
+      },
+      {
+        "id": "reliable-delivery",
+        "label": "Reliable Delivery",
+        "score": 45,
+        "summary": "Há um workflow de CI com os mesmos comandos do AGENTS.md (1 sinal conectado), mas ele nunca rodou: o branch não foi enviado ao remoto. Nenhuma decisão de aceite foi observada.",
+        "findingRefs": [
+          "entrega-so-com-validacao-local"
+        ]
+      },
+      {
+        "id": "learning-capture",
+        "label": "Learning Capture",
+        "score": 35,
+        "summary": "Continua no piso: a skill foi criada, mas há 0 skills de projeto observadas em uso, 0 candidatos recorrentes e uma única sessão. Criar o ativo não é evidência de aprendizado capturado.",
+        "findingRefs": [
+          "janela-insuficiente-para-detectar-repeticao"
+        ]
+      }
+    ],
+    "aiAgentPractice": {
+      "inspectedSurfaces": [
+        "Rules",
+        "Skills",
+        "Hooks",
+        "Workflows"
+      ],
+      "coverageRows": [
+        {
+          "surface": "Rules",
+          "scopes": [
+            "Project"
+          ],
+          "count": 2,
+          "paths": [
+            "AGENTS.md",
+            "CLAUDE.md"
+          ]
+        },
+        {
+          "surface": "Skills",
+          "scopes": [
+            "Project"
+          ],
+          "count": 1,
+          "paths": [
+            ".claude/skills/implementar-criterio-de-aceite/SKILL.md"
+          ]
+        },
+        {
+          "surface": "Hooks",
+          "scopes": [
+            "Project"
+          ],
+          "count": 1,
+          "paths": [
+            ".claude/settings.json"
+          ]
+        },
+        {
+          "surface": "Workflows",
+          "scopes": [
+            "Project"
+          ],
+          "count": 1,
+          "paths": [
+            ".github/workflows/ci.yml"
+          ]
+        }
+      ]
+    },
+    "assignmentSummaries": []
+  },
+  "findings": [
+    {
+      "id": "entrega-so-com-validacao-local",
+      "title": "O CI existe, mas nunca rodou sobre um commit do projeto",
+      "severity": "Medium",
+      "reason": "Fato: .github/workflows/ci.yml foi adicionado em 06bbe59 e o analisador passou de 0 para 1 sinal conectado de entrega, com 0 sinais observados. O branch harness-configurado só existe localmente. Inferência: enquanto não houver push, a entrega continua sustentada só por validação local. Limite: os mesmos comandos do workflow (npm ci, npm run lint, npm test) passaram localmente, o que prova o conteúdo do workflow, não a sua execução.",
+      "dimensionRefs": [
+        "reliable-delivery"
+      ],
+      "subdimensionRefs": [
+        "acceptance-evidence"
+      ],
+      "aiFixPrompt": "/better-harness fix this issue\n\nNão altere arquivos. Depois que uma pessoa com permissão de escrita enviar o branch harness-configurado e abrir o pull request, abra a execução do workflow CI no GitHub para o último commit.\n\n## Validation\n\n- Confirme que o job 'verificar' terminou com sucesso no commit atual\n- Registre o link da execução em docs/harness/evidencias.md",
+      "expectedArtifact": "CI run",
+      "expectedOutput": [
+        "Uma execução do workflow CI, com sucesso, vinculada ao último commit do branch."
+      ]
+    },
+    {
+      "id": "skill-nunca-acionada",
+      "title": "A skill da equipe nunca foi acionada em uma tarefa",
+      "severity": "Medium",
+      "reason": "Fato: .claude/skills/implementar-criterio-de-aceite/SKILL.md existe, mas o analisador registra 0 skills de projeto observadas e 0 invocações de skill na atividade da sessão. A skill foi criada depois do início da sessão analisada, então não poderia ter sido carregada nela. Limite da ferramenta: o coletor marcou 'trigger no, procedure no, output no' porque procura expressões em inglês ou chinês ('use when', 'steps', 'output'); a skill está em português, então esses três 'no' não provam ausência.",
+      "dimensionRefs": [
+        "controlled-execution"
+      ],
+      "subdimensionRefs": [
+        "supported-operation"
+      ],
+      "aiFixPrompt": "/better-harness fix this issue\n\nNão altere a skill ainda. Abra uma sessão nova e peça uma tarefa coberta pela skill sem citar o nome dela (por exemplo, implementar um critério de aceite da SPEC 001). Se o agente não acionar a skill, reescreva só o campo description e repita, contando as tentativas.\n\n## Validation\n\n- Confirme no transcrito que a skill implementar-criterio-de-aceite foi acionada sem ser citada\n- Confirme que a resposta final traz a saída de npm test e npm run lint, como pede o passo 6",
+      "expectedArtifact": "Session evidence",
+      "expectedOutput": [
+        "Um trecho de sessão nova em que o agente aciona a skill sozinho e termina com a prova exigida no último passo."
+      ]
+    },
+    {
+      "id": "janela-insuficiente-para-detectar-repeticao",
+      "title": "Uma única sessão ainda não permite dizer se há trabalho repetido",
+      "severity": "Low",
+      "reason": "Fato: a janela continua com 1 sessão elegível e 1 pedido distinto; a cobertura segue 'insufficient-recurrence' e 'insufficient-episodes', com 0 candidatos recorrentes. As duas medições saíram da mesma sessão, então não existe janela posterior comparável: a diferença entre os relatórios prova que os mecanismos foram instalados e exercitados, não que tarefas futuras melhoraram.",
+      "dimensionRefs": [
+        "learning-capture"
+      ],
+      "subdimensionRefs": [
+        "lifecycle-repeat-detection"
+      ],
+      "aiFixPrompt": "/better-harness fix this issue\n\nNão crie nenhum ativo agora. Depois de pelo menos duas tarefas comparáveis feitas com o agente em sessões novas neste repositório, rode de novo a análise.\n\n## Validation\n\n- Confirme que a nova janela tem pelo menos duas sessões e dois pedidos distintos\n- Confirme que o relatório traz uma decisão explícita: candidato repetido ou janela limpa",
+      "expectedArtifact": "Evidence",
+      "expectedOutput": [
+        "Uma terceira medição com pelo menos dois episódios comparáveis, capaz de decidir se existe repetição."
+      ]
+    }
+  ]
+}
