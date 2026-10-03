@@ -1,0 +1,20 @@
+{
+  "name": "agenda-facil",
+  "version": "0.1.0",
+  "description": "Agenda Fácil: controle de agendamentos para profissionais autônomos",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "node --test",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.0.0"
+  }
+}
