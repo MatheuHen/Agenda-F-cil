@@ -1,4 +1,5 @@
 // Hook PostToolUse (Edit|Write): roda o lint do projeto e devolve a saída ao agente.
+// PostToolUse não pode bloquear (a edição já aconteceu), então a saída volta como contexto.
 import { spawnSync } from "node:child_process";
 
 const resultado = spawnSync("npm run lint --silent", {
@@ -8,13 +9,11 @@ const resultado = spawnSync("npm run lint --silent", {
 });
 const saida = `${resultado.stdout ?? ""}${resultado.stderr ?? ""}`.trim();
 
-if (resultado.status !== 0) {
-  // Código 2 entrega o stderr ao agente, que precisa corrigir antes de seguir.
-  console.error(`[hook] npm run lint falhou:\n${saida}`);
-  process.exit(2);
-}
+const mensagem =
+  resultado.status === 0
+    ? "[hook] npm run lint: sem erros"
+    : `[hook] npm run lint falhou. Corrija antes de seguir:\n${saida}`;
 
-const mensagem = "[hook] npm run lint: sem erros";
 console.log(
   JSON.stringify({
     systemMessage: mensagem,
