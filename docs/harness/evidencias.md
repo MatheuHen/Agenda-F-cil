@@ -3,7 +3,7 @@
 Harness: **Claude Code**. Os trechos abaixo foram copiados da sessão de 03/10/2026 em que o
 harness foi configurado. Caminhos absolutos da máquina foram trocados por `<repo>`.
 
-Duas das quatro provas ainda dependem de uma **sessão nova** e estão marcadas como PENDENTE.
+As provas 1 e 3 vêm dessa sessão; as provas 2 e 4 vêm de uma sessão nova, aberta depois.
 
 ## 1. Permissão — leitura do `.env` recusada
 
@@ -25,20 +25,55 @@ A recusa veio do harness, não do agente: a ferramenta `Read` nem chegou a abrir
 
 ## 2. Skill — acionada sozinha em sessão nova
 
-**PENDENTE.** A skill `implementar-criterio-de-aceite` foi criada no meio da sessão de
-configuração; o Claude Code só carrega as skills do projeto no início da sessão, então ela não
-poderia ter sido acionada ali. Falta:
-
-1. Abrir uma sessão nova no repositório.
-2. Pedir, sem citar a skill, algo coberto por uma spec. Exemplo:
-   `garanta que o bloqueio de horário ocupado da RN-02 vale mesmo quando a data vem com espaços nas pontas`.
-3. Colar aqui o trecho em que o agente aciona a skill.
-
-Reescritas da descrição até funcionar: _preencher (0 se acionou na primeira tentativa)_.
+Sessão nova, aberta depois da configuração. Pedido feito, sem citar a skill:
 
 ```
-(colar aqui o trecho da sessão nova)
+garanta que o bloqueio de horário ocupado da RN-02 vale mesmo quando a data vem com espaços nas pontas
 ```
+
+O agente acionou a skill `implementar-criterio-de-aceite` na primeira tentativa.
+**Reescritas da descrição até funcionar: 0.**
+
+Resposta final do agente, que segue os passos da skill (cita o critério, para no passo 3 porque o
+teste novo já passava, e termina com a prova do passo 6):
+
+```
+O comportamento já existia: o teste novo passou de primeira, então não alterei src/ (passo 3 da skill).
+
+Critério: CA-02 (RN-02) da SPEC 001.
+Por que já funcionava: registrar aplica trim() na data e no horário antes de checar o conflito,
+em src/agendamentos.js:34-43.
+Arquivo alterado: só test/agendamentos.test.js, com o teste novo
+"CA-02: bloqueia horário ocupado mesmo com espaços nas pontas da data". Nada foi commitado.
+Saída da última execução de npm test e npm run lint:
+
+> agenda-facil@0.1.0 test
+> node --test
+
+✔ CA-01: registra agendamento com horário disponível (1.0775ms)
+✔ CA-02: bloqueia registro em data e horário já ocupados (0.3576ms)
+✔ CA-02: bloqueia horário ocupado mesmo com espaços nas pontas da data (0.1252ms)
+✔ RN-02 (borda): mesma data com horário diferente é aceito (0.5519ms)
+✔ CA-03: bloqueia e informa quais campos obrigatórios faltam (0.232ms)
+✔ CA-04: agendamento registrado aparece na lista com os mesmos dados (0.1071ms)
+ℹ tests 6
+ℹ pass 6
+ℹ fail 0
+
+> agenda-facil@0.1.0 lint
+> eslint .
+
+O lint terminou sem erros, e o hook pós-edição confirmou: [hook] npm run lint: sem erros.
+
+Evidência da skill: a skill foi acionada nesta sessão nova na primeira tentativa (0 reescritas da
+descrição). Ressalva: o CLAUDE.md cita a skill pelo nome para esse tipo de tarefa, então o
+acionamento não veio só da descrição dela.
+```
+
+**Ressalva.** Como o próprio agente apontou, o `CLAUDE.md` manda usar essa skill para implementar
+critérios de aceite. O acionamento sem citação no pedido está provado; que a descrição sozinha
+bastaria, não. Esta sessão aconteceu depois da segunda medição do Better Harness, então os
+relatórios ainda registram a skill como nunca usada.
 
 ## 3. Hook — saída do lint disparada por uma edição
 
@@ -70,12 +105,35 @@ PostToolUse:Write hook additional context: [hook] npm run lint: sem erros
 
 ## 4. Contexto — `/context` em sessão nova
 
-**PENDENTE.** Precisa ser rodado por uma pessoa: abrir uma sessão nova no repositório e, antes de
-qualquer pedido, digitar `/context` e colar a saída aqui.
+`/context` rodado como primeira coisa numa sessão nova, antes de qualquer pedido
+(modelo claude-opus-5-5, 38,4k de 1,0M tokens, 4%).
 
-```
-(colar aqui a saída do /context)
-```
+![Saída do /context em sessão nova](context.png)
+
+| Categoria | Tokens | % da janela |
+|---|---|---|
+| System prompt | 4.2k | 0.4% |
+| System tools | 4.0k | 0.4% |
+| MCP tools | 638 | <0.1% |
+| MCP server instructions | 1.1k | 0.1% |
+| Custom agents | 3.2k | 0.3% |
+| Memory files | 1.3k | 0.1% |
+| Skills | 21.4k | 2.1% |
+| Messages | 2.5k | 0.3% |
+| Autocompact buffer | 33.0k | 3.3% |
+| Free space | 928.6k | 92.9% |
+
+Arquivos de memória carregados: `AGENTS.md` (965 tokens), `CLAUDE.md` (312) e um arquivo de
+memória pessoal do Claude Code, fora do repositório (60).
+
+O que isso mostra:
+
+- O `AGENTS.md` e o `CLAUDE.md` são carregados em toda sessão: o import funciona. Juntos custam
+  1,3k tokens, cerca de 0,1% da janela.
+- O que mais pesa não é do projeto: os 21,4k de skills e os 3,2k de agentes (`gsd-*`) vêm de
+  plugins instalados na máquina de quem rodou. O repositório contribui com uma skill e nenhum agente.
+- As ferramentas e instruções de servidor MCP também são da máquina; o projeto não instala nenhum MCP.
+- Há 2,5k em *Messages* mesmo sem pedido; não investigamos a origem (provavelmente contexto injetado na abertura da sessão por plugins da máquina).
 
 ## 5. Leitura honesta da segunda medição
 

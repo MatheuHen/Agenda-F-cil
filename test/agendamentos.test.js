@@ -31,6 +31,16 @@ test("CA-02: bloqueia registro em data e horário já ocupados", () => {
   assert.equal(agenda.listar().length, 1);
 });
 
+test("CA-02: bloqueia horário ocupado mesmo com espaços nas pontas da data", () => {
+  const agenda = criarAgenda();
+  agenda.registrar({ cliente: "Maria Souza", data: "15/11/2026", horario: "14:00" });
+  assert.throws(
+    () => agenda.registrar({ cliente: "Marcos Lima", data: " 15/11/2026 ", horario: "14:00" }),
+    HorarioOcupadoError,
+  );
+  assert.equal(agenda.listar().length, 1);
+});
+
 test("RN-02 (borda): mesma data com horário diferente é aceito", () => {
   const agenda = criarAgenda();
   agenda.registrar({ cliente: "Maria Souza", data: "15/11/2026", horario: "14:00" });
