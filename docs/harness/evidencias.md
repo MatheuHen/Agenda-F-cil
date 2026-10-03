@@ -164,6 +164,13 @@ rodou. Nos dois casos, o arquivo no repositório não moveu a evidência de "pre
 próprio harness. A diferença prova que os mecanismos foram instalados e disparam; não prova que
 uma tarefa real da equipe sai melhor. Isso só uma medição posterior, com sessões novas, pode dizer.
 
+**Depois da segunda medição.** Dois dos "nunca aconteceu" acima deixaram de valer, e os relatórios
+não foram refeitos para refleti-los: a skill foi acionada em sessão nova (item 2), e o CI rodou e
+passou no commit `04bb6c3`, no primeiro push do branch
+([execução](https://github.com/brunoguimaraesf/Agenda-F-cil/actions/runs/37128014608)). Essa
+execução foi no fork de um integrante, não no repositório da equipe. Trabalho repetido e
+comparação posterior continuam sem evidência.
+
 ## 6. Conferência de segurança
 
 - Nenhum token, senha ou chave em `.claude/settings.json` nem em outro arquivo versionado; não há `.mcp.json`.

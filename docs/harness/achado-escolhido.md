@@ -31,6 +31,10 @@ Adiciona `.github/workflows/ci.yml`, que em todo push e pull request instala com
 
 - Feito: a partir de uma instalação limpa, `npm ci`, `npm run lint` e `npm test` passaram
   localmente (5 testes, 0 falhas, lint sem erros).
-- **Não feito:** o workflow ainda não rodou no GitHub, porque o branch `harness-configurado` não
-  foi enviado ao remoto. O segundo relatório registra isso: o achado continua aberto, agora como
-  "O CI existe, mas nunca rodou sobre um commit do projeto".
+- Na segunda medição o workflow ainda não tinha rodado, porque o branch não tinha sido enviado.
+  Por isso o segundo relatório mantém o achado aberto, como "O CI existe, mas nunca rodou sobre
+  um commit do projeto".
+- Feito depois: no primeiro push do branch `harness-configurado`, o workflow rodou e passou no
+  commit `04bb6c3`
+  ([execução](https://github.com/brunoguimaraesf/Agenda-F-cil/actions/runs/37128014608)).
+  A execução foi no fork de um integrante; no repositório da equipe ele roda a partir do pull request.
