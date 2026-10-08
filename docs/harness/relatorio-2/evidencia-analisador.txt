@@ -1,0 +1,67 @@
+HARNESS ANALYSIS EVIDENCE
+
+This is a read-only evidence brief, not a report conclusion.
+Projected report conclusions are intentionally excluded; use the observations and boundaries below to make your own evidence-backed decisions.
+Platform: claude
+Language: pt-BR
+Budget: at most 6000 estimated tokens; each evidence domain uses bounded representative rows and reports omissions.
+
+OBSERVATION SCOPE
+Source roots: 1 of 3 enabled roots exist; 3 roots were discovered.
+Session selection: analyzed 1 of 1 eligible sessions with all-eligible selection; confidence High; representative yes.
+Scope: workspace; global capability metadata included no; since 2026-09-03T13:26:39.731Z; until 2026-10-03T13:26:39.731Z.
+Privacy boundary: reader-safe; raw prompts included no; raw commands included no; absolute home paths included no.
+Source warnings: missing-optional-root.
+
+REPOSITORY FACTS
+Project label: Agenda-F-cil.
+- Task understanding: 1 observed and 1 connected signal(s). Representative evidence: 2 agent guidance file(s), 0 architecture/readme and 2 spec file(s).
+- Controlled execution: 1 observed and 1 connected signal(s). Representative evidence: 1 workspace manifest(s), workspace run/build/test scripts.
+- Change validation: 1 observed and 1 connected signal(s). Representative evidence: 1 tracked test file(s), workspace test/check script.
+- Reliable delivery: 0 observed and 1 connected signal(s). Representative evidence: 1 CI workflow file(s).
+- Agent practice coverage: Rules has 1 asset(s) in Project; paths: CLAUDE.md.
+- Agent practice coverage: Skills has 1 asset(s) in Project; paths: .claude/skills/implementar-criterio-de-aceite/SKILL.md.
+- Agent practice coverage: Hooks has 1 asset(s) in Project; paths: .claude/settings.json.
+- Agent practice coverage: Workflows has 1 asset(s) in Project; paths: .github/workflows/ci.yml.
+- Agent practice coverage: Custom Agents has 0 asset(s) in Project.
+- Reusable Skill evidence: candidates-present; 1 candidate asset(s), 0 observed project Skill(s), and 0 unresolved name match(es).
+  - .claude/skills/implementar-criterio-de-aceite/SKILL.md: trigger no, procedure no, output no, validation yes, routed no.
+- Regression-test evidence: scanned-empty; inspected 10 commit(s) and retained 0 source/test co-change candidate(s).
+- Canonical planning evidence: candidates-present; 2 candidate(s); paths: docs/specs/001-cadastro-de-agendamento.md, docs/specs/001-revisao.md.
+- Sensitive-config scan coverage: complete; 5 of 5 candidate file(s) scanned, 0 skipped, 0 read error(s), truncated no.
+- Learning observation coverage: 17 episode record(s), 0 recurring candidate(s), 0 scoped Skill observation(s), and 0 unscoped Skill observation(s).
+  - Aggregated friction signals: failed-event: 2, source-warning:missing-optional-root: 2.
+  - Coverage boundary: Asset Coverage=checked-clean, Capture=not-evaluable-missing-normalized-events, Pattern Detection=insufficient-recurrence, Routing=not-evaluable-missing-invocation-events, Freshness=not-evaluable-missing-freshness-evidence, Application=not-evaluable-missing-application-events, Evolution=not-evaluable-missing-update-evidence, Effectiveness=pending-no-later-window, Memory Governance=checked-clean.
+- Workflow-demand observation: 0 current handoff(s) and 0 repeated candidate(s); candidate contents are not projected into this brief.
+  - Coverage boundary: Demand Signals=not-evaluable-missing-normalized-events, Current Handoff=checked-clean, Recurrence=insufficient-episodes, Skill Inventory=checked-clean, Skill Activation=checked-clean.
+
+SESSION AND TASK FACTS
+Session packet: 1 selected session(s), 17 retained candidate episode(s), and 1 discarded episode(s).
+Usage activity: 1 session(s) in the complete activity census.
+Usage census: analyzed 1 of 1 eligible sessions; complete yes; 0 active-long and 0 wall-only session(s); accounting host-estimated.
+- Episode 1 (episode:4edd012db77531ef): session-start; 1 session(s); 0 change event(s) in 0 set(s); 0 validation event(s) in 1 set(s); closure not-applicable; repair not-applicable; 682.1 seconds; 15 tool call(s); 139 retained event(s).
+- Episode 2 (episode:ba4e4bbf6b04960d): progress-handoff; 1 session(s); 1 change event(s) in 1 set(s); 0 validation event(s) in 0 set(s); closure unobserved; repair not-applicable; 27.5 seconds; 2 tool call(s); 16 retained event(s).
+- Episode 3 (episode:411922c714561881): progress-handoff; 1 session(s); 1 change event(s) in 1 set(s); 0 validation event(s) in 0 set(s); closure unobserved; repair not-applicable; 2.0 seconds; 1 tool call(s); 4 retained event(s).
+- Episode 4 (episode:1d9cc1afc055eda1): progress-handoff; 1 session(s); 1 change event(s) in 1 set(s); 0 validation event(s) in 0 set(s); closure unobserved; repair not-applicable; 7.0 seconds; 1 tool call(s); 8 retained event(s).
+- Episode 5 (episode:078484275edb8c91): progress-handoff; 1 session(s); 1 change event(s) in 1 set(s); 0 validation event(s) in 1 set(s); closure unobserved; repair not-applicable; 6.8 seconds; 2 tool call(s); 11 retained event(s).
+- 12 additional task episode(s) omitted; selection retained the first, last, and highest observed activity episodes.
+
+ANALYZER OBSERVATIONS
+- Analyzed 1 of 1 sessions; 1/3 enabled source roots exist. Use this as the current workspace evidence boundary for final insight cards.
+- Observed validation command category: lint (8). Use observed validation as execution evidence, not just configured command availability. (3 bounded evidence reference(s))
+- Observed 9 edit event(s) and later validation: agent-lint (1). Use this as evidence for validation-after-edit behavior, with the sample boundary still visible. (1 bounded evidence reference(s))
+- Observed friction category: failed-event (2). Open bounded sessions behind this category before turning it into a user-facing recommendation. (2 bounded evidence reference(s))
+- Most observed tool: Bash (41). Use this as workflow evidence, then inspect bounded sessions before claiming user intent. (5 bounded evidence reference(s))
+- The analysis covered 1 sessions: none met the active-long threshold. This activity does not establish model preference or quality; effectiveness still requires outcome comparison within the same task family. (3 bounded evidence reference(s))
+
+DELIVERY EVIDENCE
+No bounded evidence observed.
+
+INTERVENTION HISTORY
+No bounded evidence observed.
+
+REVIEW BOUNDARIES
+- Source candidate: requires-review.
+- Repository review: requires-review; 2 framework(s), 9 repository check(s), and 5 Software Fluency capability review(s) remain in scope.
+- Score review: requires-review; 5 dimension(s) await AI judgment.
+- Session observation review: candidate; 6 observation card(s) from 1 analyzed session(s).
